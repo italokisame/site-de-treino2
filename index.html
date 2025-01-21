@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de marketing Equipe Decola</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+      body, html { 
+        height: 100%; 
+        padding: 0;
+        margin: 0; 
+      }
+      main {
+      flex: 1;
+      }
+
+      .section-container {
+        background-color: black; 
+        color: skyblue; 
+        padding: 150px; 
+        position: relative; 
+        overflow: hidden; 
+        min-height: 300px;
+      }
+
+      .chablau {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .header {
+        background-color: black; /* Fundo preto */
+        color: white; /* Texto branco */
+        padding: 20px;
+      }
+
+      .logo {
+        max-height: 80px;
+        max-width: 220px;
+        height: auto;
+        width: auto;
+      }
+
+      .principais {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/imagens/windows-w79mIrYKcK4-unsplash.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; 
+        text-align: left; /* Alinha o texto à esquerda */
+        padding-left: 20px; /* Adiciona preenchimento à esquerda */
+      }
+
+      .letras {
+        color: white;
+        list-style-type: disc; 
+        list-style-position: inside;
+        padding-left: 20px;
+        margin: 0;
+        width: 40%; 
+      }
+
+      .letras li { 
+        margin-bottom: 5px; 
+      }
+
+      .texto-ajustado {
+        line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+        margin-bottom: 10px; /* Ajusta a margem inferior */
+      }
+
+      .btn {
+        background-color: white;
+        color: black;
+        border-color: black;
+      }
+
+      .btn:hover { 
+        background-color: aqua;
+        color: black;
+        border-color: aqua;
+      }
+
+      .card {
+        border-radius: 10px;
+        border-color: skyblue;
+        color: skyblue;
+        margin: 20px;
+        background-color: black;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-title, .card-img-top {
+        flex-shrink: 0; /* Impede que o título e a imagem encolham */
+      }
+
+      .card-text {
+        max-height: 100px;
+        overflow-y: auto; 
+      }
+
+      .card-text::-webkit-scrollbar {
+        width: 5px; 
+        display: none; 
+      }
+
+      .card-text:hover::-webkit-scrollbar {
+        display: block;
+      }
+
+      .card-text::-webkit-scrollbar-track {
+        background: transparent; /* Fundo da barra de rolagem */
+      }
+
+      .card-text::-webkit-scrollbar-thumb {
+        background-color: #555; /* Cor do polegar da barra de rolagem */
+        border-radius: 10px; /* Arredondar a barra de rolagem */
+      }
+
+      .card-text::-webkit-scrollbar-thumb:hover {
+        background: #333; /* Cor do polegar da barra de rolagem quando estiver sobre ele */
+      }
+
+      .footer { 
+        background-color: black; 
+        color: white; 
+        text-align: center; 
+        padding: 10px; 
+        margin-top: 20px;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Altura total da janela */
+      }
+
+      .btn2 {
+        margin: 10px;
+        font-size: 24px;
+        border: white;
+        background-color: skyblue;
+        border-radius: 10px;
+        padding: 10px;
+      } 
+
+      .list {
+        list-style: none;
+        font-size: 10px;
+        color: gray;
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+        padding: 20px; 
+        margin: 0 auto;
+      }
+
+      .list li{
+        color: skyblue;
+      }
+
+      .details {
+        margin: 40px;
+        border-top: solid 1px whitesmoke;
+      }
+
+      .details:hover {
+        color: skyblue;
+      }
+
+      .relo {
+        color: black;
+      }
+
+      .relo:hover {
+        color: black;
+      }
+
+      .lista {
+        color: gray;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: none;
+      }
+
+      body:hover::-webkit-scrollbar {
+        display: block;
+      }
+
+      body::-webkit-scrollbar {
+        width: 5px; 
+      }
+
+      body::-webkit-scrollbar-thumb:hover {
+        background-color: #333;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+
+      .compra li {
+        margin-bottom: 5px;
+        list-style-position: inside;
+        align-items: center;
+        border-style: none none solid none;
+        padding: 20px;
+        margin-right: 50px;
+      }
+
+      .btn-primary {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 20px;
+        width: 200px;
+      }
+
+      .price {
+    margin-bottom: 0;
+      }
+
+      .installments {
+    margin-top: 0;
+    color: silver;
+      }
+
+      .full-width-btn {
+    width: 100%;
+    margin: 0;
+    display: block;
+      }
+      .col {
+        max-height: 100px;
+      }
+
+      .btn-primary:hover {
+        background-color: black;
+      }
+
+      .linke:hover {
+        color: black;
+      }
+
+      .opa {
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+      }
+
+      /* Estilos Gerais para os Cards */
+.container .row .col-md-3 {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+}
+
+.section-content button { 
+  font-size: 24px; 
+  width: 100%; /* Garante que o botão ocupe toda a largura */ 
+  border: none; 
+  background-color: skyblue; 
+  border-radius: 10px; 
+  padding: 10px; 
+}
+
+.section-content p { 
+  width: 100%; /* Garante que o parágrafo ocupe toda a largura */ 
+}
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 768px) {
+  .container { 
+    padding: 10px; 
+  } 
+  
+  .card { 
+    width: 100%; 
+  } 
+  
+  .col-md-3 { 
+    flex: 0 0 100%; 
+    max-width: 100%; 
+  }
+
+  .central {
+  display: flex;
+  padding: 20px;
+  width: auto;
+  }
+
+  .central img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* removerá o espaço extra abaixo da imagem */
+  z-index: -1;
+  position: absolute;
+  }
+
+  .imm {
+    display: none;
+  }
+
+  .central-text { 
+    width: auto;
+    min-width: 70%;
+    height: 20%;
+    margin: 0%;
+    padding-right: 0%;
+  }
+
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .letras { 
+    font-size: 16px; /* ajuste conforme necessário */ 
+    justify-content: center;
+  } 
+  
+  .texto-ajustado { 
+    font-size: 14px; /* ajuste conforme necessário */ 
+  }
+
+  .btn2 {
+    font-size: 25px;
+    width: 100%;
+    height: 30%;
+  }
+
+  .nov {
+    width: 100%;
+  }
+
+  .principais {
+    padding-left: 0px;
+    width: 100%;
+    font-size: larger;
+  }
+
+  .class{
+    color: white;
+  }
+
+  .section-content { 
+    max-width: 100%; 
+    padding: none; /* ajuste conforme necessário */ 
+    margin: 2px;
+    min-height: none;
+    min-width: 80%;
+  } 
+
+  .row { 
+    flex-direction: column; 
+  } 
+  
+  .col { 
+    flex: 0 0 100%; 
+  } 
+  
+  .section-image { 
+    display: none; /* oculta a imagem em telas menores */ 
+  }
+
+  .oiy {
+    font-size: 2vw; 
+      line-height: 1.2;
+      padding: 4%;
+      align-items: center;
+      padding-left: 10px;
+  }
+
+  .boton {
+    height: 70px;
+    width: 500px;
+  }
+
+  .section-content { 
+    max-width: 100%; 
+    padding: 20px;
+    padding-left: 0%;
+  } 
+  
+  .section-content h2 { 
+    font-size: 30px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-content p { 
+    font-size: 16px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-content a { 
+    font-size: 18px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-image { 
+    display: none; /* Oculta a imagem em telas menores */ 
+  }
+
+  .section-container { 
+    padding: 20px; /* Ajuste conforme necessário */ 
+  }
+
+  .d4 {
+    font-size: 20px;
+    min-width: 80%;
+  }
+
+  .logo {
+        max-height: 70px;
+        max-width: 200px;
+        height: auto;
+        width: auto;
+      }
+}
+    </style>
+</head>
+<body>
+  <header> 
+    <div class="container-fluid header"> 
+      <div class="align-items-center"> 
+        <div class="col-6 d-flex justify-content-between align-items-center"> 
+          <a href="/"> <img src="/imagens/LogoBranca.png" alt="Logo equipe decola" class="logo"> </a> 
+        </div> 
+      </div> 
+    </div> 
+  </header>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" style="align-items: center;">
+    <div class="container-fluid principais">
+        <section class="w-100">
+          <div class="central"> 
+            <div class="central-text">
+              <h2 class="letras mb-4 d4">Tranforme seu potencial: <strong style="color: aqua;">Aprenda á desenvolver suas habilidades no marketing</strong></h2>
+              <p class="letras texto-ajustado d4"><strong>Aprenda mais sobre marketing. Você irá aprender:</strong></p>
+              <ul class="letras d4">
+                <li>Gerenciamento de redes.</li>
+                <li>Introdução ao marketing digital: <i>o que é, importância e seus conceitos basicos.</i></li>
+                <li>Ferramentas gratuitas para ajudar na gestão (<i>como Canva, Later, ou Creator Studio</i>).</li>
+                <li>Etc.</li>
+                <a href="#oferta"><button class="btn2">Saber mais</button></a>
+              </ul>
+            </div>
+          </div>          
+        </section>
+    </div>
+    <section>
+      <div style="background-color: skyblue; text-align: center; padding: 30px; text-shadow: #333; font-size: 25px; color: black;">amplie sua influência e assuma o controle da sua trajetoria</div>
+    </section>
+    <h2 style="text-align: center;" class="glass">O que você vai conquistar?</h2>
+      <div class="container containn">
+          <div class="row">
+              <div class="col-md-3 d-flex">
+                  <div class="card">
+                      <img src="/imagens/will-francis-r02wxT3-PYw-unsplash.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Descubra o poder do marketing!</h5>
+                          <p class="card-text lista">Aprenda técnicas práticas e dinâmicas para dominar ferramentas essenciais de marketing digital. Transforme suas habilidades e veja seu potencial <strong>Decolar</strong>! 🚀📈</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 d-flex">
+                  <div class="card">
+                      <img src="/imagens/chris-liverani-NDfqqq_7QWM-unsplash.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Analise de resultados</h5>
+                          <p class="card-text lista">Introdução à métricas importantes, uso de ferramentas analíticas, identificar o que funciona e o que não funciona, etc.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 d-flex">
+                  <div class="card">
+                      <img src="/imagens/alexander-shatov-71Qk8ODIBko-unsplash.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Gerenciamento de redes</h5>
+                          <p class="card-text lista">Aprenderá a utilizar Canva, Later ou Creator Studio. Ferramentas gratuitas que ajudarão no gerenciamento. Além de aprimorar planejamento e execução de postagens.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 d-flex">
+                  <div class="card">
+                      <img src="/imagens/carlos-muza-hpjSkU2UYSU-unsplash.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title">Aulas e Mais</h5>
+                          <p class="card-text lista">Você terá acesso a 3 aulas com duração média de 1h30 a 2 horas dependendo de sua importância. Materiais incluídos: apresentação em PDF, planilha editável e lista de ferramentas.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    <p style="color: gray; text-align: center;">Você será equipado com sabedoria</p>
+  </div>
+  <section class="section-container oiy">
+    <div style="position: absolute; top: 0; right: 0; width: 600px; height: 600px;" class="section-image">
+        <img src="/imagens/diggity-marketing-s8HyIEe7lF0-unsplash.jpg" alt="" style="width: 100%; height: 100%; object-fit:cover;" class="imaigi imm">
+        <div class="opa"></div>
+    </div>
+    <div style="max-width: 60%;" class="section-content">
+        <h2 style="font-size: 50px; width: 80%;">Domine seu potencial</h2>
+        <p style="width: 80%;">Marketing não é apenas sobre o que você vende, mas sim sobre a história que você conta. Aprenda a maneira de contar a sua história!</p>
+        <a href="/registro.html" class="linke"><button style="font-size: 24px; border: white; background-color: skyblue; border-radius: 10px; padding: 10px;" class="boton">Reivindique seu lugar</button></a>
+    </div>
+  </section>
+  
+  <section>
+    <div style="background-color: rgb(34, 107, 135); text-align: center; padding: 20px; color: white; min-height: 800px;" class="nov">
+      <div class="container px-4 text-center">
+        <div class="row gx-5 compra pp">
+          <div class="col">
+            <div class="p-3">
+              <h2>Investir em si nunca foi tao impactante</h2>
+          </div>
+          <img src="/imagens/laptop-icon-19524.png" alt="" style="height: 40px; width: 40px;">
+          <ul>
+              <li>Planejamento e execuçao passo á passo.</li>
+              <li>Construção de visão ao longo prazo.</li>
+              <li>utilização de ferramentas analiticas.</li>
+          </ul>
+          <h3 class="price">R$ 500,00</h3>
+          <p class="installments">ou até em 5x de R$ 100,00</p>
+          <a href="/registro.html"><button type="button" class="btn-primary btn-lg full-width-btn">Inscrever-se agora!</button></a>          
+          </div>
+          <div class="col">
+            <div class="p-3">
+              <img src="/imagens/—Pngtree—glitch numbers 7 vector on_5994693.png" alt="" style="height: 600px; width: 600px; text-shadow: #333;" class="imm">
+              <h3 class="imm">Garantia incondicional de 7 dias</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="text-align: center; margin: 40px;" class="glass">
+    <h2>F.A.Q</h2>
+    <details class="details">
+      <summary>Quem deve realizar esse curso?</summary>
+      <ul class="list">
+        <li>É adequado para pessoas que querem adentrar ao marketing digital e não sabem muito sobre ou Pessoas que querem aprimorar seu conhecimento no marketing digital.</li>
+      </ul>
+    </details>
+    <details class="details">
+      <summary>Quanto tempo leva para completar o curso?</summary>
+      <ul class="list">
+        <li>É adequado para pessoas que querem adentrar ao marketing digital e não sabem muito sobre ou Pessoas que querem aprimorar seu conhecimento no marketing digital.</li>
+      </ul>
+    </details>
+    <details class="details">
+      <summary>Existe suporte durante o curso?</summary>
+      <ul class="list">
+        <li>É adequado para pessoas que querem adentrar ao marketing digital e não sabem muito sobre ou Pessoas que querem aprimorar seu conhecimento no marketing digital.</li>
+      </ul>
+    </details>
+  </section>
+  </main>
+    <footer style="background-color: black; border-style: solid none none none;" class="footer">
+      <section>
+        <p>Ainda tem duvidas? Entre em contato conosco <a href="https://wa.me/5584998048597">aqui</a></p>
+        <a href="#">sobre nós</a>
+        <p>© 2025 Equipe Decola</p>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</body>
+</html>
