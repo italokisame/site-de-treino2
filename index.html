@@ -11,7 +11,9 @@
         height: 100%; 
         padding: 0;
         margin: 0; 
+        overflow-x: hidden;
       }
+
       main {
       flex: 1;
       }
@@ -287,10 +289,14 @@
 }
 
 /* Media Query para dispositivos móveis */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container { 
     padding: 10px; 
   } 
+
+  body, html {
+    margin: 0;
+}
   
   .card { 
     width: 100%; 
@@ -303,7 +309,6 @@
 
   .central {
   display: flex;
-  padding: 20px;
   width: auto;
   }
 
@@ -321,7 +326,7 @@
 
   .central-text { 
     width: auto;
-    min-width: 70%;
+    min-width: 100%;
     height: 20%;
     margin: 0%;
     padding-right: 0%;
@@ -332,9 +337,21 @@
   }
   
   .letras { 
-    font-size: 16px; /* ajuste conforme necessário */ 
     justify-content: center;
   } 
+
+  .letras {
+    font-size: 1em; /* Reduz o tamanho do texto em telas menores */
+  }
+
+  .btn2 {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .central-text {
+    margin: 20px;
+  }
   
   .texto-ajustado { 
     font-size: 14px; /* ajuste conforme necessário */ 
@@ -387,6 +404,37 @@
       align-items: center;
       padding-left: 10px;
   }
+  .glass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 40px;
+    }
+
+    .details {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px 0;
+    }
+
+    .list {
+        list-style-type: none;
+        padding: 0;
+        word-wrap: break-word; /* Permite que o texto quebre a linha e se ajuste ao contêiner */
+        white-space: normal; /* Permite a quebra de linha apropriada */
+        min-width: 100%;
+    }
+
+    .details summary {
+        display: flex;
+        justify-content: center; /* Centraliza o sumário */
+    }
+
+    .details[open] summary {
+        display: block; /* Garante que o sumário se expanda corretamente quando aberto */
+    }
 
   .boton {
     height: 70px;
@@ -398,6 +446,10 @@
     padding: 20px;
     padding-left: 0%;
   } 
+
+  .principais {
+    height: 700px;
+  }
   
   .section-content h2 { 
     font-size: 30px; /* Ajuste conforme necessário */ 
@@ -430,7 +482,71 @@
         height: auto;
         width: auto;
       }
+
+      .nov {
+          height: 100px;
+        }
 }
+
+@media (max-width: 480px) {
+        .letras {
+            font-size: 0.8em; /* Reduz ainda mais o tamanho do texto em telas muito pequenas */
+            width: 100%;
+        }
+
+        .principais {
+          height: 500px;
+        }
+
+        body, html {
+          margin: 0;
+          width: 100%;
+        }
+
+        .btn2 {
+            font-size: 0.8em;
+            margin-right: 20px;
+            width: 40%;
+        }
+
+        .central-text {
+            margin: 5px; /* Reduzindo a margem em telas muito pequenas */
+        }
+
+        .nov {
+          height: 400px;
+        }
+    }
+@media (max-width: 1280px) {
+  .section-content { 
+    max-width: 100%; 
+    padding: none; /* ajuste conforme necessário */ 
+    margin: 2px;
+    min-height: 250px;
+    min-width: 65%;
+  } 
+
+  .section-content h2 { 
+    font-size: 30px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-content p { 
+    font-size: 16px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-content a { 
+    font-size: 18px; /* Ajuste conforme necessário */ 
+  } 
+  
+  .section-image { 
+    display: none; /* Oculta a imagem em telas menores */ 
+  }
+
+  .section-container { 
+    padding: 20px; /* Ajuste conforme necessário */ 
+  }
+}    
+
     </style>
 </head>
 <body>
